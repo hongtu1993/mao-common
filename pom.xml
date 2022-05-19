@@ -7,7 +7,7 @@
     <groupId>com.github.hongtu1993</groupId>
     <artifactId>mao-common</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <modules>
         <module>mao-common-web</module>
         <module>mao-common-base</module>
@@ -22,6 +22,7 @@
         <lombok.version>1.18.24</lombok.version>
         <modelmapper.version>3.1.0</modelmapper.version>
         <log4j-to-slf4j.version>2.17.2</log4j-to-slf4j.version>
+        <mao-common.version>1.0.0</mao-common.version>
     </properties>
 
     <dependencies>
@@ -49,4 +50,35 @@
             <!--对象拷贝 end-->
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>mao</name>
+            <url>https://maven.pkg.github.com/hongtu1993/mao-common</url>
+        </repository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>https://repo1.maven.org/maven2</url>
+                </repository>
+                <repository>
+                    <id>jitpack.io</id>
+                    <url>https://jitpack.io</url>
+                </repository>
+                <repository>
+                    <id>github</id>
+                    <url>https://maven.pkg.github.com/hongtu1993/*</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
 </project>

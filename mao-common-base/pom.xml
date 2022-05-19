@@ -5,7 +5,7 @@
     <parent>
         <artifactId>mao-common</artifactId>
         <groupId>com.github.hongtu1993</groupId>
-        <version>1.0.1</version>
+        <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <packaging>jar</packaging>
@@ -24,5 +24,13 @@
             <artifactId>modelmapper</artifactId>
         </dependency>
         <!--对象拷贝 end-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -31,6 +31,18 @@ public class JarvisException extends Exception {
         this.reasonPhrase = message;
     }
 
+    protected JarvisException(String message) {
+        super(message);
+        this.errorCode = ResultErrorType.System.BAD_REQUEST.getErrorCode();
+        this.reasonPhrase = message;
+    }
+
+    protected JarvisException(String message, Throwable cause) {
+        super(message, cause);
+        this.errorCode = ResultErrorType.System.BAD_REQUEST.getErrorCode();
+        this.reasonPhrase = message;
+    }
+
     public int getErrorCode() {
         return errorCode;
     }

@@ -45,14 +45,6 @@ public class BaseAdviceConfig {
         return new ResultFactory<>().error().customMsg("Server exception.");
     }
 
-//    @ExceptionHandler(DataIntegrityViolationException.class)
-//    @ResponseBody
-//    @ResponseStatus(HttpStatus.OK)
-//    public ResultEntity<Serializable> exception(DataIntegrityViolationException e) {
-//        log.error(e.getLocalizedMessage());
-//        return new ResultFactory<>().error().customMsg("Data integrity violation exception.");
-//    }
-
     @ExceptionHandler(BindException.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
@@ -121,23 +113,6 @@ public class BaseAdviceConfig {
         log.warn(e.getLocalizedMessage());
         return new ResultFactory<>().error().customMsg("Illegal argument exception").customMsgDetail(e.getLocalizedMessage());
     }
-
-//    @ExceptionHandler(InvalidTokenException.class)
-//    @ResponseBody
-//    @ResponseStatus(HttpStatus.OK)
-//    public ResultEntity<Serializable> invalidTokenException(InvalidTokenException e) {
-//        log.warn(e.getLocalizedMessage());
-//        return new ResultFactory<>().error().customCode(401).customMsg("InvalidToken").customMsgDetail("Token was not recognised");
-//    }
-
-//    @ExceptionHandler(InsufficientAuthenticationException.class)
-//    @ResponseBody
-//    @ResponseStatus(HttpStatus.OK)
-//    public ResultEntity<Serializable> insufficientAuthenticationException(InsufficientAuthenticationException e) {
-//        log.warn(e.getLocalizedMessage());
-//        ResultErrorCodeI jwtExpired = ResultErrorType.Jwt.JWT_EXPIRED;
-//        return new ResultFactory<>().error().customCode(jwtExpired.getErrorCode()).customMsg("InvalidToken").customMsgDetail(jwtExpired.getReasonPhrase());
-//    }
 
     private ObjectError getHibernateObjectError(List<ObjectError> allErrors) {
         if (!allErrors.isEmpty()) {

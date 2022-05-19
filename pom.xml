@@ -64,19 +64,19 @@
             <id>github</id>
             <repositories>
                 <repository>
-                    <id>central</id>
-                    <url>https://repo1.maven.org/maven2</url>
+                    <id>github</id>
+                    <url>https://maven.pkg.github.com/hongtu1993/*</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
                 </repository>
                 <repository>
                     <id>jitpack.io</id>
                     <url>https://jitpack.io</url>
                 </repository>
                 <repository>
-                    <id>github</id>
-                    <url>https://maven.pkg.github.com/hongtu1993/*</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
+                    <id>central</id>
+                    <url>https://repo1.maven.org/maven2</url>
                 </repository>
             </repositories>
         </profile>

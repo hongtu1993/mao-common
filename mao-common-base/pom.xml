@@ -7,13 +7,21 @@
         <groupId>com.github.hongtu1993</groupId>
         <version>1.0.0</version>
     </parent>
+    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mao-common-base</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <!--对象拷贝-->
+        <!--https://www.baeldung.com/java-modelmapper-lists-->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+        </dependency>
+        <!--对象拷贝 end-->
+    </dependencies>
 </project>

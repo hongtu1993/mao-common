@@ -1,6 +1,8 @@
 package com.maoyupeng.common.base.util;
 
 
+import com.maoyupeng.common.base.exception.ext.ParamException;
+
 import java.util.List;
 
 /**
@@ -98,19 +100,19 @@ public final class EmptyUtil {
         return (isEmpty(collection) || collection.isEmpty());
     }
 
-//    /**
-//     * 判断集合对象是否为空集合，空集合则抛出异常
-//     * @param collection 待验证的集合
-//     * @param errorMessage 自定义错误参数
-//     * @param <T> 泛型类型
-//     * @return 如果校验通过，返回元数据
-//     * @throws ParamException 空集合则抛出异常
-//     */
-//    public static <T> List<T> isEmptyListElseThrow(List<T> collection, String errorMessage) throws JarvisException {
-//        if (isEmptyList(collection)) {
-//            throw new JarvisException(errorMessage);
-//        } else {
-//            return collection;
-//        }
-//    }
+    /**
+     * 判断集合对象是否为空集合，空集合则抛出异常
+     * @param collection 待验证的集合
+     * @param errorMessage 自定义错误参数
+     * @param <T> 泛型类型
+     * @return 如果校验通过，返回元数据
+     * @throws ParamException 空集合则抛出异常
+     */
+    public static <T> List<T> isEmptyListElseThrow(List<T> collection, String errorMessage) throws ParamException {
+        if (isEmptyList(collection)) {
+            throw new ParamException(errorMessage);
+        } else {
+            return collection;
+        }
+    }
 }

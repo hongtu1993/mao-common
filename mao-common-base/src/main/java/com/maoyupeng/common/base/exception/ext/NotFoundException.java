@@ -5,7 +5,7 @@ import com.maoyupeng.common.base.exception.ResultErrorCodeI;
 import com.maoyupeng.common.base.exception.ResultErrorType;
 
 /**
- * 业务异常（已存在检查异常）
+ * 业务异常（不存在检查异常）
  *
  * @author 毛宇鹏
  * @copyright Copyright (c) 2022  ALL RIGHTS RESERVED.

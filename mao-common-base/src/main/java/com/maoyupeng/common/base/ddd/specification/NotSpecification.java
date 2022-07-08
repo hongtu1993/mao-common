@@ -1,11 +1,13 @@
 package com.maoyupeng.common.base.ddd.specification;
 
+import com.maoyupeng.common.base.exception.JarvisException;
+
 /**
  * NOT decorator, used to create a new specifcation that is the inverse (NOT) of the given spec.
  */
 public class NotSpecification<T> extends AbstractSpecification<T> {
 
-    private Specification<T> spec1;
+    private final Specification<T> spec1;
 
     /**
      * Create a new NOT specification based on another spec.
@@ -20,7 +22,7 @@ public class NotSpecification<T> extends AbstractSpecification<T> {
      * {@inheritDoc}
      */
     @Override
-    public boolean isSatisfiedBy(final T t) {
+    public boolean isSatisfiedBy(final T t)  throws JarvisException {
         return !spec1.isSatisfiedBy(t);
     }
 }

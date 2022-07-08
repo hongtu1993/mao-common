@@ -1,12 +1,14 @@
 package com.maoyupeng.common.base.ddd.specification;
 
+import com.maoyupeng.common.base.exception.JarvisException;
+
 /**
  * AND specification, used to create a new specifcation that is the AND of two other specifications.
  */
 public class AndSpecification<T> extends AbstractSpecification<T> {
 
-    private Specification<T> spec1;
-    private Specification<T> spec2;
+    private final Specification<T> spec1;
+    private final Specification<T> spec2;
 
     /**
      * Create a new AND specification based on two other spec.
@@ -23,7 +25,7 @@ public class AndSpecification<T> extends AbstractSpecification<T> {
      * {@inheritDoc}
      */
     @Override
-    public boolean isSatisfiedBy(final T t) {
+    public boolean isSatisfiedBy(final T t)  throws JarvisException {
         return spec1.isSatisfiedBy(t) && spec2.isSatisfiedBy(t);
     }
 }

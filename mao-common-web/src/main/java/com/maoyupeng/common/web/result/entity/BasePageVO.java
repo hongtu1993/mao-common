@@ -25,7 +25,9 @@ public abstract class BasePageVO implements Serializable {
     @JsonIgnore
     protected PageAble pageAble;
 
-    private BasePageVO() {}
+    private BasePageVO() {
+        throw new IllegalStateException("BasePageVO is utility class.");
+    }
 
     protected BasePageVO(PageAble pageAble) {
         this.pageAble = pageAble;

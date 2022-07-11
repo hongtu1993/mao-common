@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.maoyupeng.common.base.util.EmptyUtil;
 import com.maoyupeng.common.web.result.factory.PageAble;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -20,12 +19,13 @@ import java.util.Optional;
  */
 @SuppressWarnings("unused")
 @Data
-@NoArgsConstructor
-public class BasePageVO implements Serializable {
+public abstract class BasePageVO implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     protected PageVO pageInfo;
     @JsonIgnore
     protected PageAble pageAble;
+
+    private BasePageVO() {}
 
     protected BasePageVO(PageAble pageAble) {
         this.pageAble = pageAble;

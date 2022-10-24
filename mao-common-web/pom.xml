@@ -5,7 +5,7 @@
     <parent>
         <artifactId>mao-common</artifactId>
         <groupId>com.github.hongtu1993</groupId>
-        <version>1.0.14</version>
+        <version>1.0.15</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <packaging>jar</packaging>
@@ -14,6 +14,7 @@
     <artifactId>mao-common-web</artifactId>
 
     <properties>
+        <lombok.version>1.18.24</lombok.version>
     </properties>
 
     <dependencies>
@@ -51,6 +52,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
         </dependency>
     </dependencies>
 

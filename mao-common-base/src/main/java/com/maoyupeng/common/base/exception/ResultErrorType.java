@@ -54,6 +54,7 @@ public interface ResultErrorType {
         public static final ResultErrorCodeI DISABLED = new ResultErrorCodeImpl(codeBuilder(ErrorModuleEnum.COMMON, ErrorTypeEnum.DISABLED), "Target has been disabled.");
         public static final ResultErrorCodeI STATUS_FAIL = new ResultErrorCodeImpl(codeBuilder(ErrorModuleEnum.COMMON, ErrorTypeEnum.STATUS), "Target has been disabled.");
         public static final ResultErrorCodeI IMMUTABLE_FAIL = new ResultErrorCodeImpl(codeBuilder(ErrorModuleEnum.COMMON, ErrorTypeEnum.IMMUTABLE), "Target immutable.");
+        public static final ResultErrorCodeI SERVICE_FAIL = new ResultErrorCodeImpl(codeBuilder(ErrorModuleEnum.COMMON, ErrorTypeEnum.LOGIC_FAIL), "Service exception.");
     }
 
     enum ErrorModuleEnum {
@@ -124,6 +125,10 @@ public interface ResultErrorType {
          * 参数校验异常
          */
         VERIFICATION_FAIL("09"),
+        /**
+         * 逻辑异常
+         */
+        LOGIC_FAIL("10"),
         ;
 
         private final String value;

@@ -61,6 +61,16 @@ public final class EmptyUtil {
         }
     }
 
+    public static void noEmpty(String obj, String name) {
+        if (!isEmpty(obj)) {
+            String val = obj.trim();
+            if (EMPTY_STRING.equalsIgnoreCase(val)) {
+                throw new IllegalArgumentException("[Assertion failed] - this String argument " + name + " must not empty");
+            }
+        }
+        throw new NullPointerException("[Assertion failed] - this String argument " + name + " must not null");
+    }
+
     /**
      * 转换为int<br>
      * 如果给定的值为空，或者转换失败，返回默认值<br>
@@ -113,6 +123,12 @@ public final class EmptyUtil {
             throw new ParamException(errorMessage);
         } else {
             return collection;
+        }
+    }
+
+    public static void noNull(Object object, String name) {
+        if (object == null) {
+            throw new NullPointerException("[Assertion failed] - " + name + "must not null");
         }
     }
 }

@@ -128,7 +128,7 @@ public final class EmptyUtil {
 
     public static void noNull(Object object, String name) {
         if (object == null) {
-            throw new NullPointerException("[Assertion failed] - " + name + "must not null");
+            throw new NullPointerException("[Assertion failed] - " + name + " must not null");
         }
     }
 }
